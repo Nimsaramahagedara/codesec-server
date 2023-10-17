@@ -16,14 +16,18 @@ app.use(morgan('dev'));
 const port = 10000 || process.env.PORT
 
 //Routes
-app.use('/',userRouter);
+app.use('/', userRouter);
 app.use('/recipe', recipeRoutes)
 
 //Connect to the MongoDb Database
-dbConfig()
-
-//Create The Server
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+dbConfig().then(() => {
+    //Create The Server
+    app.listen(port, () => {
+        console.log(`Server is listening on port ${port}`);
+    })
+}).catch((err)=>{
+    console.log(err);
 })
+
+
 
