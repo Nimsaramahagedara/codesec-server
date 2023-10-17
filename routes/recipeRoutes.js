@@ -1,5 +1,5 @@
 import express from 'express'
-import { filterByCategory, getCategories, getProductDetails } from '../dao/RecipeDao.js';
+import { filterByCategory, getCategories, getProductDetails } from '../dao/recipeDao.js';
 
 const recipeRoutes = express.Router();
 
