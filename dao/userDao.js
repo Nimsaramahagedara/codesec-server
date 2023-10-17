@@ -7,7 +7,7 @@ import request from 'request'
 import axios from 'axios'
 
 export const createToken = (id) => {
-    const token = jwt.sign({ id }, process.env.SECRET_KEY, {
+    const token = jwt.sign({ id }, process.env.APPSETTING_SECRET_KEY, {
         expiresIn: '1d'
     })
     return token

@@ -8,7 +8,7 @@ export const authMiddleware = async (req, res, next) => {
         token = req.headers.authorization.split(' ')[1];
         try{
            if(token){
-            const decoded = jwt.verify(token, process.env.SECRET);
+            const decoded = jwt.verify(token, process.env.APPSETTING_SECRET);
             const user = await UserModel.findById(decoded?.id);
             req.userId = admin._id;
             next();
