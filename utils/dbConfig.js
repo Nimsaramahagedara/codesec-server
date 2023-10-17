@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 export const dbConfig =async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URL, {
+        await mongoose.connect(process.env.APPSETTING_MONGO_URL, {
             useNewUrlParser: true
         })
         console.log('MongoDb Connected !!');

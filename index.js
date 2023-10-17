@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-const port = 10000 || process.env.PORT
+const port = 10000 || process.env.APPSETTING_PORT
 
 //Routes
 app.use('/', userRouter);
