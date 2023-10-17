@@ -16,13 +16,19 @@ app.use(morgan('dev'));
 const port = 10000 || process.env.APPSETTING_PORT
 
 //Routes
+// Initial response
+app.get('/', (req, res) => {
+    res.send('Server is running');
+});
 app.use('/', userRouter);
 app.use('/recipe', recipeRoutes)
+
 
 //Connect to the MongoDb Database
 dbConfig().then(() => {
     //Create The Server
     app.listen(port, () => {
+        
         console.log(`Server is listening on port ${port}`);
     })
 }).catch((err)=>{
