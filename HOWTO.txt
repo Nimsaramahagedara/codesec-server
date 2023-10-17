@@ -1,0 +1,4 @@
+after cloning the project
+run this command on terminal
+
+npm run start
